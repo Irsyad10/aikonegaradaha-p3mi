@@ -5,13 +5,7 @@ import React, { useState, useEffect, useRef } from 'react';
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [language, setLanguage] = useState<'ID' | 'JP'>('ID');
-  const [formData, setFormData] = useState({
-    nama: '',
-    hp: '',
-    program: '',
-    pesan: ''
-  });
-  const [formSubmitted, setFormSubmitted] = useState(false);
+
   const heroGraphicRef = useRef<HTMLDivElement>(null);
 
   // Handle sticky navbar shadow and 3D hero rotation on scroll
@@ -49,17 +43,7 @@ export default function Home() {
     };
   }, []);
 
-  // Form submit handler
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (formData.nama && formData.hp && formData.program) {
-      setFormSubmitted(true);
-      setTimeout(() => {
-        setFormSubmitted(false);
-        setFormData({ nama: '', hp: '', program: '', pesan: '' });
-      }, 5000);
-    }
-  };
+
 
   // Content bilingual dictionary
   const content = {
@@ -72,10 +56,10 @@ export default function Home() {
         daftar: 'Daftar Sekarang'
       },
       hero: {
-        tag: 'Lembaga Pelatihan Resmi Terakreditasi',
+        tag: 'P3MI Resmi Terakreditasi',
         title1: 'Wujudkan Karir di ',
         title2: 'Jepang',
-        title3: 'Bersama LPK Global Maju',
+        title3: 'Bersama PT Aiko Negara Daha',
         desc: 'Persiapkan masa depan profesional Anda dengan pelatihan intensif bahasa dan keterampilan, dibimbing langsung oleh instruktur berpengalaman untuk standar kerja industri Jepang.',
         cta1: 'Mulai Perjalanan Anda',
         cta2: 'Lihat Program',
@@ -86,8 +70,8 @@ export default function Home() {
       },
       youtube: {
         tag: 'Mengenal Lebih Dekat',
-        title: 'Profil LPK & Cerita Alumni',
-        desc: 'Saksikan bagaimana LPK Global Maju mempersiapkan talenta Indonesia untuk bersaing di standar industri global melalui metode pelatihan yang disiplin dan terstruktur.'
+        title: 'Profil Perusahaan & Cerita Alumni',
+        desc: 'Saksikan bagaimana PT Aiko Negara Daha mempersiapkan talenta Indonesia untuk bersaing di standar industri global melalui metode pelatihan yang disiplin dan terstruktur.'
       },
       programs: {
         tag: 'Pilihan Karir',
@@ -166,7 +150,7 @@ export default function Home() {
           price: 'Rp 15.000.000',
           list: [
             'Modul & Buku Panduan Lengkap',
-            'Seragam Resmi LPK',
+            'Seragam Resmi PT Aiko Negara Daha',
             'Asrama & Katering (Selama Pelatihan)',
             'Tryout Ujian Bahasa (JLPT/JFT)'
           ]
@@ -186,26 +170,15 @@ export default function Home() {
       },
       daftar: {
         title: 'Mulai Langkah Pertama Anda',
-        desc: 'Isi formulir di bawah untuk mendaftar atau menjadwalkan konsultasi gratis. Tim representatif kami akan segera menghubungi Anda untuk panduan selanjutnya.',
+        desc: 'Silakan klik tombol pendaftaran di samping untuk mengisi formulir pendaftaran online resmi PT Aiko Negara Daha melalui Google Form.',
         office: 'Kantor Pusat',
-        address: 'Jl. Pelatihan No. 123, Jakarta Selatan',
+        address: 'Garden loft, Jl. Grand Wisata.30 blok CE 02, Lambangjaya, Kec. Tambun Sel., Kabupaten Bekasi, Jawa Barat 17510',
         phone: 'Telepon / WA',
-        phoneNum: '+62 812 3456 7890',
-        formTitle: 'Formulir Pendaftaran',
-        labelNama: 'Nama Lengkap',
-        placeholderNama: 'Masukkan nama sesuai KTP',
-        labelHp: 'Nomor WhatsApp',
-        placeholderHp: 'Contoh: 0812...',
-        labelProgram: 'Program yang Diminati',
-        placeholderProgram: 'Pilih Program...',
-        labelPesan: 'Pesan / Pertanyaan (Opsional)',
-        placeholderPesan: 'Tuliskan pertanyaan Anda di sini...',
-        btnSubmit: 'Kirim Pendaftaran',
-        successMsg: 'Terima kasih! Pendaftaran Anda berhasil dikirim. Tim kami akan menghubungi Anda dalam waktu 1x24 jam.'
+        phoneNum: '+62 812 3456 7890'
       },
       footer: {
         desc: 'Membangun jembatan kesuksesan antara talenta muda Indonesia dan standar profesionalisme industri Jepang.',
-        copy: '© 2026 LPK Global Maju. Menghubungkan Bakat Indonesia dengan Standar Profesional Jepang.',
+        copy: '© 2026 PT Aiko Negara Daha. Menghubungkan Bakat Indonesia dengan Standar Profesional Jepang.',
         title1: 'Tautan Cepat',
         title2: 'Dukungan',
         links1: ['Tentang Kami', 'Karir di Jepang'],
@@ -221,10 +194,10 @@ export default function Home() {
         daftar: '今すぐ登録'
       },
       hero: {
-        tag: '政府公認・正式認定済トレーニングセンター',
+        tag: '政府公認・正式認定済送出機関',
         title1: '日本でのキャリアを ',
         title2: '実現',
-        title3: 'LPK Global Maju とともに',
+        title3: 'PT Aiko Negara Daha とともに',
         desc: '経験豊富な講師陣が日本産業界の基準に合わせて直接指導する、集中的な言語および技術トレーニングで、プロとしての将来に備えましょう。',
         cta1: '旅を始めましょう',
         cta2: 'プログラムを見る',
@@ -236,7 +209,7 @@ export default function Home() {
       youtube: {
         tag: 'より近くで知る',
         title: '紹介映像＆卒業生ストーリー',
-        desc: '規律ある体系的な訓練方法を通じて、LPK Global Majuがどのようにインドネシアの人材をグローバル産業基準に適応させているかをご覧ください。'
+        desc: '規律ある体系的な訓練方法を通じて、PT Aiko Negara Dahaがどのようにインドネシアの人材をグローバル産業基準に適応させているかをご覧ください。'
       },
       programs: {
         tag: 'キャリアの選択肢',
@@ -315,7 +288,7 @@ export default function Home() {
           price: '1,500万ルピア',
           list: [
             '完全な教材・ハンドブック一式',
-            'LPK公式制服',
+            'PT Aiko Negara Daha公式制服',
             '研修中の宿泊・食事費用',
             '日本語試験（JLPT/JFT）模擬テスト'
           ]
@@ -335,26 +308,15 @@ export default function Home() {
       },
       daftar: {
         title: '最初の一歩を踏み出しましょう',
-        desc: '以下のフォームに入力して、登録手続きまたは無料相談の予約を行ってください。担当スタッフより追ってご連絡いたします。',
+        desc: '右側の登録ボタンをクリックして、GoogleフォームからPT Aiko Negara Dahaの公式オンライン登録フォームに入力してください。',
         office: '本部オフィス',
-        address: 'ジャカルタ南部、訓練道路123番地',
+        address: 'Garden loft, Jl. Grand Wisata.30 blok CE 02, Lambangjaya, Kec. Tambun Sel., Kabupaten Bekasi, Jawa Barat 17510',
         phone: '電話 / WhatsApp',
-        phoneNum: '+62 812 3456 7890',
-        formTitle: '登録お申し込みフォーム',
-        labelNama: '氏名',
-        placeholderNama: '身分証明書記載のフルネーム',
-        labelHp: 'WhatsApp番号',
-        placeholderHp: '例: 0812...',
-        labelProgram: '希望プログラム',
-        placeholderProgram: 'プログラムを選択してください...',
-        labelPesan: 'メッセージ・質問 (任意)',
-        placeholderPesan: 'ご質問等があればこちらにご記入ください...',
-        btnSubmit: 'お申し込みを送信',
-        successMsg: 'ありがとうございます！お申し込みは正常に送信されました。24時間以内に担当スタッフよりご連絡いたします。'
+        phoneNum: '+62 812 3456 7890'
       },
       footer: {
         desc: 'インドネシアの若い才能と日本のプロフェッショナル産業基準を結ぶ架け橋を築きます。',
-        copy: '© 2026 LPK Global Maju. インドネシアの才能と日本の基準をつなぐ。',
+        copy: '© 2026 PT Aiko Negara Daha. インドネシアの才能と日本の基準をつなぐ。',
         title1: 'クイックリンク',
         title2: 'サポート',
         links1: ['会社概要', '日本でのキャリア'],
@@ -377,7 +339,7 @@ export default function Home() {
           {/* Brand */}
           <a className="flex items-center gap-2 group" href="#">
             <span className="font-display-lg-mobile text-display-lg-mobile font-bold text-primary dark:text-primary-fixed tracking-tight">
-              LPK Global Maju
+              PT Aiko Negara Daha
             </span>
           </a>
 
@@ -617,7 +579,12 @@ export default function Home() {
             <h3 className="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-4 font-bold">{t.youtube.title}</h3>
             <p className="font-body-lg text-body-lg text-on-surface-variant">{t.youtube.desc}</p>
           </div>
-          <div className="relative max-w-4xl mx-auto rounded-2xl overflow-hidden ambient-shadow aspect-video bg-surface-container-high group cursor-pointer">
+          <a 
+            href="https://www.youtube.com/watch?v=bz_wbbchxzE"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block relative max-w-4xl mx-auto rounded-2xl overflow-hidden ambient-shadow aspect-video bg-surface-container-high group cursor-pointer"
+          >
             <div className="absolute inset-0 bg-primary/10 mix-blend-multiply z-10"></div>
             <img 
               alt="Video Thumbnail" 
@@ -629,7 +596,7 @@ export default function Home() {
                 <span className="material-symbols-outlined text-4xl" style={{ fontVariationSettings: "'FILL' 1" }}>play_arrow</span>
               </div>
             </div>
-          </div>
+          </a>
         </div>
       </section>
 
@@ -673,7 +640,6 @@ export default function Home() {
                 <a 
                   className="inline-flex items-center text-primary font-bold group-hover:text-secondary transition-colors mt-auto" 
                   href="#daftar"
-                  onClick={() => setFormData({ ...formData, program: prog.id })}
                 >
                   {t.programs.cta} 
                   <span className="material-symbols-outlined ml-1 text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
@@ -690,7 +656,6 @@ export default function Home() {
                 <a 
                   className="bg-secondary text-white font-semibold py-2.5 px-6 rounded-lg inline-block hover:bg-secondary-container transition-colors active:scale-95 transform duration-200" 
                   href="#daftar"
-                  onClick={() => setFormData({ ...formData, program: 'belum_tahu' })}
                 >
                   {t.programs.ctaSelect}
                 </a>
@@ -866,90 +831,28 @@ export default function Home() {
               </div>
             </div>
             
-            {/* Form Container */}
-            <div className="bg-surface-container-lowest rounded-2xl p-8 ambient-shadow border border-outline-variant/30">
-              <h3 className="font-headline-sm font-bold text-primary mb-6">{t.daftar.formTitle}</h3>
-              {formSubmitted ? (
-                <div className="bg-green-50 border border-green-200 text-green-800 rounded-lg p-6 text-center animate-fade-in-up">
-                  <span className="material-symbols-outlined text-green-600 text-5xl mb-3">check_circle</span>
-                  <p className="font-semibold text-lg">{t.daftar.successMsg}</p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <div>
-                    <label className="block font-semibold text-on-surface mb-1 text-sm" htmlFor="nama">
-                      {t.daftar.labelNama}
-                    </label>
-                    <input 
-                      required
-                      value={formData.nama}
-                      onChange={(e) => setFormData({ ...formData, nama: e.target.value })}
-                      className="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors text-on-surface" 
-                      id="nama" 
-                      placeholder={t.daftar.placeholderNama} 
-                      type="text"
-                    />
-                  </div>
-                  <div>
-                    <label className="block font-semibold text-on-surface mb-1 text-sm" htmlFor="hp">
-                      {t.daftar.labelHp}
-                    </label>
-                    <input 
-                      required
-                      value={formData.hp}
-                      onChange={(e) => setFormData({ ...formData, hp: e.target.value })}
-                      className="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors text-on-surface" 
-                      id="hp" 
-                      placeholder={t.daftar.placeholderHp} 
-                      type="tel"
-                    />
-                  </div>
-                  <div>
-                    <label className="block font-semibold text-on-surface mb-1 text-sm" htmlFor="program-select">
-                      {t.daftar.labelProgram}
-                    </label>
-                    <div className="relative">
-                      <select 
-                        required
-                        value={formData.program}
-                        onChange={(e) => setFormData({ ...formData, program: e.target.value })}
-                        className="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 appearance-none focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors text-on-surface" 
-                        id="program-select"
-                      >
-                        <option value="">{t.daftar.placeholderProgram}</option>
-                        <option value="kaigo">{language === 'ID' ? 'Kaigo (Caregiver)' : '介護 (Kaigo)'}</option>
-                        <option value="konstruksi">{language === 'ID' ? 'Konstruksi' : '建設 (Konstruksi)'}</option>
-                        <option value="manufaktur">{language === 'ID' ? 'Manufaktur' : '製造 (Manufaktur)'}</option>
-                        <option value="perikanan">{language === 'ID' ? 'Perikanan' : '漁業 (Perikanan)'}</option>
-                        <option value="driver">{language === 'ID' ? 'Driver (Pengemudi)' : 'ドライバー (Driver)'}</option>
-                        <option value="belum_tahu">{language === 'ID' ? 'Belum Tahu / Ingin Konsultasi' : '未定 / 相談希望'}</option>
-                      </select>
-                      <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-on-surface-variant">
-                        <span className="material-symbols-outlined">expand_more</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div>
-                    <label className="block font-semibold text-on-surface mb-1 text-sm" htmlFor="pesan">
-                      {t.daftar.labelPesan}
-                    </label>
-                    <textarea 
-                      value={formData.pesan}
-                      onChange={(e) => setFormData({ ...formData, pesan: e.target.value })}
-                      className="w-full bg-surface border border-outline-variant rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors text-on-surface" 
-                      id="pesan" 
-                      placeholder={t.daftar.placeholderPesan} 
-                      rows={3}
-                    ></textarea>
-                  </div>
-                  <button 
-                    className="w-full bg-secondary hover:bg-secondary-container text-white font-bold py-4 rounded-lg transition-premium active:scale-95 shadow-md duration-200" 
-                    type="submit"
-                  >
-                    {t.daftar.btnSubmit}
-                  </button>
-                </form>
-              )}
+            {/* CTA / Button Container */}
+            <div className="bg-surface-container-lowest rounded-2xl p-8 md:p-10 ambient-shadow border border-outline-variant/30 flex flex-col justify-center items-center text-center">
+              <div className="w-16 h-16 bg-primary-fixed rounded-full flex items-center justify-center mb-6 text-primary">
+                <span className="material-symbols-outlined text-4xl">assignment</span>
+              </div>
+              <h3 className="font-headline-sm font-bold text-primary mb-4">
+                {language === 'ID' ? 'Pendaftaran Online' : 'オンライン登録'}
+              </h3>
+              <p className="font-body-md text-on-surface-variant mb-8 max-w-sm leading-relaxed">
+                {language === 'ID' 
+                  ? 'Klik tombol di bawah untuk mengisi formulir pendaftaran resmi PT Aiko Negara Daha langsung melalui Google Form.' 
+                  : '下のボタンをクリックして、Googleフォームから直接PT Aiko Negara Dahaの公式登録フォームに入力してください。'}
+              </p>
+              <a 
+                href="https://forms.gle/3eP8X97GFDK6oHTXA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-secondary hover:bg-secondary-container text-white font-bold py-4 px-6 rounded-lg transition-premium active:scale-95 shadow-md flex items-center justify-center gap-2 text-lg duration-200"
+              >
+                <span>{language === 'ID' ? 'Isi Formulir Pendaftaran' : '登録フォームに入力する'}</span>
+                <span className="material-symbols-outlined text-xl">open_in_new</span>
+              </a>
             </div>
           </div>
         </div>
@@ -959,7 +862,7 @@ export default function Home() {
       <footer className="w-full py-stack-lg bg-tertiary text-white border-t border-outline-variant transition-opacity duration-200">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-on-tertiary font-body-md text-body-md">
           <div className="col-span-1 md:col-span-2">
-            <div className="font-headline-sm text-headline-sm font-bold text-white mb-4">LPK Global Maju</div>
+            <div className="font-headline-sm text-headline-sm font-bold text-white mb-4">PT Aiko Negara Daha</div>
             <p className="text-tertiary-fixed-dim max-w-sm mb-6 leading-relaxed">
               {t.footer.desc}
             </p>

@@ -8,8 +8,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "LPK Global Maju - Pelatihan Kerja Jepang",
-  description: "Lembaga Pelatihan Kerja Resmi Terakreditasi untuk mempersiapkan masa depan profesional Anda di Jepang.",
+  title: "PT Aiko Negara Daha - Pelatihan Kerja Jepang",
+  description: "PT Aiko Negara Daha - P3MI Resmi Terakreditasi untuk mempersiapkan masa depan profesional Anda di Jepang.",
 };
 
 export default function RootLayout({
